@@ -1,0 +1,61 @@
+<div class="container">
+    <h1><strong>Kayıt Defteri</strong></h1>
+    <div  class="row">
+        <div class=" col-3 mx-auto p-3 mb-3"> 
+            <label  class="form-control-label"><strong>İsim</strong></label>
+            <input #nameField id="name" name="name1"  class="form-control" type="text" placeholder="Lütfen adınızı giriniz" required>
+           
+            
+        </div>
+        <div class="col-3 mx-auto p-3 mb-3" >
+            <label  class="form-control-label"><strong>Adres</strong></label>
+            <input id="address" class="form-control" #addressField type="text" rows="5" placeholder="Lütfen adresinizi giriniz" required>
+            
+        </div>
+    </div>
+
+    <div  class="row">
+        <div class=" col-3 mx-auto p-3 mb-3"> 
+            <label  class="form-control-label"><strong>Telefon numarası</strong></label>
+            <input id="phone" name="name1" #phoneField class="form-control" type="text" placeholder="Lütfen telefon bilgileriniz" required>
+            
+        </div>
+        <div class="col-3 mx-auto p-3 mb-3" >
+            <label  class="form-control-label"><strong>Mobil telefon numarası</strong></label>
+            <input id="mobilePhone" class="form-control" #mobilePhoneField type="text" placeholder="Lürfen mobil telefon bilgileri" required>
+           
+        </div>
+    </div>
+    <div class="mb-5" style="width: 300px; margin-left:500px;">
+        <label  class="form-control-label"><strong>E-mail adresi</strong></label>
+        <input  class="col-3 p-3 mb-3  " id="email" name="email1" #emaill class="form-control" type="email" placeholder="Lütfen email bilgileriniz" required>
+    </div>
+    <div class="row ">
+        <button class="col-3 mx-auto p-3 mb-3 btn btn-primary " (click)="addPerson(nameField.value,addressField.value,phoneField.value,mobilePhoneField.value,emaill.value)">Kayıt et</button>
+        <!---->
+        <button class="col-3 mx-auto p-3 mb-3 btn btn-primary ">Kayıt Güncelle</button>
+        <button class="col-3 mx-auto p-3 mb-3 btn btn-primary " >Kayıt Sil</button>
+    </div>
+
+    <table class="table table-bordered">
+        <thead> 
+            <tr>
+                <th>İsim</th>
+                <th>Adres</th>
+                <th>telefon</th>
+                <th>mobil telefon</th>
+                <th>email telefon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umut of umuts" (click)="nameField.value=umut.name" (click)="addressField.value=umut.address" (click)="phoneField.value=umut.phone" (click)="mobilePhoneField.value=umut.mobilePhone" (click)="emaill.value=umut.emal" >
+                <td>{{umut.name}}</td>
+                <td>{{umut.address}}</td>
+                <td>{{umut.phone}}</td>
+                <td>{{umut.mobilePhone}}</td>
+                <td>{{umut.emal}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
